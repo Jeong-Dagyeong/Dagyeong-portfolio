@@ -270,7 +270,7 @@ export default function GreenSeoulBot() {
             Green Seoul Bot (Github)
           </Link>
           <Link
-            href="https://github.com/Jeong-Dagyeong/GreenSeoulBot_frontend"
+            href="https://www.youtube.com/watch?v=e-lMW-KMPv8"
             target="/_blank"
             className="text-xs border border-[var(--color-gold)] text-[var(--color-gold)] inline-flex items-center rounded-full px-3 py-1 size-fit mt-1.5 ml-2"
           >
