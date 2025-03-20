@@ -20,7 +20,7 @@ export default function recyclechatbot() {
     <div className="max-w-screen-lg mx-auto px-8 py-12 text-white">
       <div className="relative w-full">
         <Link
-          href="/dk_portfolio"
+          href="https://dagyeong-portfolio.vercel.app"
           className="absolute right-0 text-xs border border-[var(--color-gold)] text-[var(--color-gold)] inline-flex items-center rounded-full px-3 py-1 size-fit"
         >
           메인으로
