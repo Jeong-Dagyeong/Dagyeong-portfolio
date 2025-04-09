@@ -282,11 +282,6 @@ export default function GreenSeoulBot() {
             Green Seoul Bot은 <span className="font-semibold text-yellow-300">Recycle ChatBot</span>을 리팩토링하여 만든
             개발물로 이 페이지에선 리팩토링된 부분을 보여드리겠습니다.
           </p>
-          <Link href="/recyclechatbot" target="/_blank" className="cursor-pointer">
-            <span className="font-semibold text-yellow-300 underline underline-offset-8">
-              Recycle ChatBot 프로젝트를 보려면 여기를 클릭해주세요.
-            </span>
-          </Link>
         </div>
         <p className="text-xl font-bold text-yellow-300 mb-4">고대비 모드(다크 모드), 음성지원 모드</p>
         <div className="flex flex-col items-center gap-8 mb-6">
@@ -585,6 +580,14 @@ export default function GreenSeoulBot() {
           </table>
         </div>
       </section>
+      <div className="relative w-full">
+        <Link
+          href="https://dagyeong-portfolio.vercel.app/maze"
+          className="absolute right-0 text-xs border border-[var(--color-gold)] text-[var(--color-gold)] inline-flex items-center rounded-full px-3 py-1 size-fit"
+        >
+          Next ((주)MAZE 기업협업 프로젝트)
+        </Link>
+      </div>
     </div>
   )
 }

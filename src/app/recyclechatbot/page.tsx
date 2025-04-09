@@ -455,9 +455,8 @@ export default function recyclechatbot() {
               판단하였고, 공식 문서를 참고하여 상위 컴포넌트에서 사용자 입력(input)을 처리하는 방식으로 변경하였습니다.
             </p>
             <p>
-              이후 채팅을 입력할 때 말풍선이 두 번씩 전송되는 문제가 발생하였습니다. 멘토님과 함께 코드를 확인한 결과,
-              함수의 마지막에 return을 적지 않은 것이 원인이었으며, 이를 통해 return의 중요성을 다시 한번 깨닫게
-              되었습니다.
+              이후 채팅을 입력할 때 말풍선이 두 번씩 전송되는 문제가 발생하였습니다. 코드를 확인한 결과, 함수의 마지막에
+              return을 적지 않은 것이 원인이었으며, 이를 통해 return의 중요성을 다시 한번 깨닫게 되었습니다.
             </p>
             <p>
               그러나 이후 일부 구간에서는 채팅이 정상적으로 한 번만 전송되었지만, 다른 구간에서는 아예 전송이 되지 않는
@@ -476,6 +475,14 @@ export default function recyclechatbot() {
           </div>
         </div>
       </section>
+      <div className="relative w-full">
+        <Link
+          href="https://dagyeong-portfolio.vercel.app/greenseoulbot"
+          className="absolute right-0 text-xs border border-[var(--color-gold)] text-[var(--color-gold)] inline-flex items-center rounded-full px-3 py-1 size-fit"
+        >
+          Next (Green Seoul Bot)
+        </Link>
+      </div>
     </div>
   )
 }
