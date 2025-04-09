@@ -26,7 +26,7 @@ export default function maze() {
       <section className="mb-12">
         <div className="mb-8">
           <h3 className="text-3xl font-bold text-yellow-400">협업 기간</h3>
-          <p className="mt-2 text-gray-300 text-lg">20233.02 ~ 2023.03 (1개월)</p>
+          <p className="mt-2 text-gray-300 text-lg">2023.02 ~ 2023.03 (1개월)</p>
         </div>
       </section>
 
