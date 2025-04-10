@@ -12,7 +12,7 @@ export default function Home() {
             안녕하세요. <br />
             <span className="font-bold text-3xl text-yellow-400 color-change">긍정의 알고리즘으로 도전을 풀어가는</span>
             <br />
-            프론트엔드 개발자 정다경 입니다.
+            정다경 입니다.
           </p>
           <Link
             href="https://github.com/Jeong-Dagyeong"
