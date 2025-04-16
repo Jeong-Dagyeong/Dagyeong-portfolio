@@ -349,7 +349,6 @@ export default function GreenSeoulBot() {
               <li>
                 채팅 입력칸 오른쪽에는<span className="font-semibold text-yellow-300"> 음성인식 </span> 기능을 추가하여
                 <span className="font-semibold text-yellow-300">
-                  {' '}
                   시각·지체 장애인, 고령자, 난독증 사용자 등 손이나 시각 활용이 어려운
                 </span>
                 이들도 원활하게 서비스를 이용할 수 있도록 접근성을 강화했습니다.
@@ -361,7 +360,6 @@ export default function GreenSeoulBot() {
               <li>
                 하지만 이번 Green Seoul Bot은 모든 정책정보가 DB안에 저장되어있기 때문에
                 <span className="font-semibold text-yellow-300">
-                  {' '}
                   답변 버블이 2초 이내로 만들어 질 수 있도록 속도면에서 향상{' '}
                 </span>
                 되었습니다.
@@ -376,22 +374,24 @@ export default function GreenSeoulBot() {
             <div className="mt-8 text-left">
               <p className="text-xl font-semibold text-yellow-300">트러블 슈팅</p>
               <div className="space-y-4 mt-4 text-gray-300 leading-relaxed">
+                <p className="text-l font-semibold text-yellow-200">[문제점]</p>
                 <p>
-                  고대비모드(다크모드)와 확대모드를 적용할 때 맞는 방법을 찾지 못해서 일주일 이상의 시간이 소요
-                  됐었습니다.
+                  고대비 모드와 확대 모드를 적용하기 위해 className을 추가·삭제하는 방식으로 구현을 시도했지만, 원하는
+                  시점에 CSS가 제대로 반영되지 않아 UI가 불안정하게 동작했습니다.
                 </p>
+                <p className="text-l font-semibold text-yellow-200">[해결]</p>
                 <p>
-                  처음엔 챗봇 body 상단에 className 추가 / 삭제 코드를 이용해서 두가지 모드를 적용하고 해지하려 했으나,
-                  className 추가 / 삭제는 잘 되었지만, 추가 / 삭제가 되었을 때 함수를 이용하여 css를 적용하려고 했던
-                  방식이 잘 되지 않았습니다.
+                  문제의 원인을 class 변경 이후 CSS 동작 방식과 렌더링 시점의 불일치로 파악하고, 동적 모듈 로딩(Dynamic
+                  import) 방식으로 접근을 전환했습니다. 두 가지 모드를 각각 함수로 분리하여 관리하고, 필요한 시점에 관련
+                  모듈을 동적으로 불러와 적용하는 방식으로 리팩토링하였습니다. 결과적으로 고대비 모드와 확대 모드 모두
+                  버튼 클릭만으로 정상적으로 on/off가 가능하게 되었고, UI 적용도 안정화되었습니다.
                 </p>
+                <p className="text-l font-semibold text-yellow-200">[회고]</p>
                 <p>
-                  계속 어디에 추가를 하고 삭제를 해야 적용이 잘 될까 고민해보던 중 import를 추가 / 삭제 할 수 있을까에
-                  대한 의문이 들었고 찾아보니 동적으로 모듈을 가져오는(Dynamic import) 방식이 존재했습니다.
-                </p>
-                <p>
-                  챗봇 상단에 고대비모드(다크 모드)와 확대모드를 추가 / 삭제 할 수 있는 함수를 만들었고, 적용을 시킨
-                  결과 이상없이 잘 적용이 되었습니다.
+                  이번 경험을 통해 단순한 class 조작만으로는 동적인 UI 반응을 컨트롤하기 어려울 수 있다는 점을
+                  배웠습니다. 또한, 렌더링 시점과 동작 흐름을 고려한 설계, 그리고 React의 동적 import 활용이 실무에
+                  어떻게 접목될 수 있는지를 체감할 수 있는 기회였습니다. 이후 유사한 기능을 구현할 때는 무작정 DOM
+                  조작보다는 구조적이고 명확한 상태 관리 및 동적 로딩을 우선 고려하는 사고 방식을 갖게 되었습니다.
                 </p>
               </div>
             </div>
@@ -432,21 +432,22 @@ export default function GreenSeoulBot() {
               <div className="mt-8 text-left">
                 <span className="text-xl font-semibold text-yellow-300">트러블 슈팅</span>
                 <div className="space-y-4 mt-4 text-gray-300 leading-relaxed">
+                  <p className="text-l font-semibold text-yellow-200">[문제점]</p>
                   <p>
-                    저희 팀은 cookie 방식으로 로그인을 구현하기로 결정했습니다. Admin 페이지는 담당자만 접근하면 되며,
-                    각 구별 25개의 계정을 담당자에게만 공유하는 방식이 적절하다고 판단했기 때문입니다.
+                    Admin 페이지 로그인에 쿠키 방식을 적용하려 했으나, 프론트엔드에서 ID와 비밀번호는 정상적으로
+                    전달되었음에도 불구하고 쿠키가 저장되거나 전달되지 않는 문제가 발생했습니다.
                   </p>
+                  <p className="text-l font-semibold text-yellow-200">[해결]</p>
                   <p>
-                    하지만 개발 과정에서 프론트엔드에서 id와 password는 정상적으로 전달되었으나, cookie가 제대로
-                    저장되지 않고 전달되지 않는 문제가 발생했습니다.
+                    여러 방법을 시도했지만 해결이 어려워, 최종적으로는 DB에 ID와 비밀번호를 저장하고 검증하는 방식으로
+                    로그인 로직을 전환하여 기능을 마무리했습니다.
                   </p>
+                  <p className="text-l font-semibold text-yellow-200">[회고]</p>
                   <p>
-                    여러 시도를 했지만 해결책을 찾지 못해, 결국 DB에 각 구별 ID와 비밀번호를 저장하고 검증하는 방식으로
-                    변경하였습니다.
-                  </p>
-                  <p>
-                    이 과정이 가장 아쉬운 점으로 남았으며, 개인 프로젝트에서 다시 도전하여 성공하고 싶다는 목표가
-                    생겼습니다.
+                    기술적으로 완성하지 못한 점이 아쉬움으로 남았고, 쿠키 기반 인증에 대한 이해와 실습이 부족했음을
+                    느꼈습니다. 이후 개인 프로젝트에서 다시 도전해보고 싶다는 목표가 생겼습니다. 이 내용은
+                    포트폴리오에서 실수나 시행착오를 솔직하게 공유하면서도 성장 의지를 강조할 수 있는 좋은 사례가
+                    됩니다. 필요하시면 보완 방법이나 다시 시도할 계획까지 포함해 확장해드릴 수도 있어요!
                   </p>
                 </div>
               </div>
@@ -464,21 +465,21 @@ export default function GreenSeoulBot() {
               <div className="mt-8 text-left">
                 <span className="text-xl font-semibold text-yellow-300">트러블 슈팅</span>
                 <div className="space-y-4 mt-4 text-gray-300 leading-relaxed">
+                  <p className="text-l font-semibold text-yellow-200">[문제점]</p>
                   <p>
-                    Next.js의 폴더 기반 라우팅을 처음 사용하면서 쿼리스트링을 이용해 각 구의 이름을 전달하는 방식을
-                    계획했습니다.{' '}
+                    Next.js의 폴더 기반 라우팅을 처음 사용할 때 동적 라우팅을 모르고, 모든 경로를 쿼리스트링으로
+                    처리했습니다. 이로 인해 URL이 불필요하게 길어지고, 폴더 구조도 깊어져 전체 구조가 복잡해졌습니다.
                   </p>
+                  <p className="text-l font-semibold text-yellow-200">[해결]</p>
                   <p>
-                    하지만 동적 라우팅(Dynamic Routes)의 존재를 모르고 있었고, 모든 경로를 쿼리스트링으로 처리하다 보니
-                    URL이 점점 길어졌습니다. 결국, 폴더를 깊게 중첩시키는 방식으로 구현하면서 구조가 복잡해지고 스스로도
-                    헷갈리는 상황이 되었습니다.
+                    동적 라우팅을 학습한 후, 기존 구조를 전면 수정해 간결하고 명확한 URL 구조로 개선했습니다. 페이지
+                    관리도 훨씬 쉬워졌고, 사용자 입장에서도 직관적인 경로로 접근할 수 있게 되었습니다.
                   </p>
+                  <p className="text-l font-semibold text-yellow-200">[회고]</p>
                   <p>
-                    이후 동적 라우팅을 알게 되어 기존 구조를 전부 수정하고, 더 효율적인 URL 형태로 개선할 수 있었습니다.
-                  </p>
-                  <p>
-                    이번 경험을 통해 Next.js의 라우팅 방식에 대한 이해가 깊어졌고, 앞으로는 초기 설계 단계에서 동적
-                    라우팅을 적극 활용해야겠다는 교훈을 얻었습니다.
+                    이번 경험을 통해 Next.js의 라우팅 구조를 제대로 이해하게 되었고, 초기 설계 단계에서의 방향 설정이
+                    얼마나 중요한지 깨달았습니다. 앞으로는 동적 라우팅을 적극 활용해 더 효율적인 구조를 설계하고자
+                    합니다.
                   </p>
                 </div>
               </div>
