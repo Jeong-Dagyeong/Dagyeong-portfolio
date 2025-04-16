@@ -38,7 +38,8 @@ export default function maze() {
               {[
                 '워크샵에 참가하여 아나콘다 가상환경 프로그램을 이용하여 AI 레이블링과 딥러닝에 참여',
                 '`Master of Cafe` 대회 심사위원 버전 QA 참여',
-                '2주에 한번씩 협업 내용에 대해서 성과 발표',
+                '`Master of Cafe` 대회 심사위원 페이지 로그인 고도화',
+                'Apache ECharts를 이용하여 심사위원 디브리핑 자료 차트 만들기',
               ].map((item, index) => (
                 <tr key={index} className="border-t border-gray-600">
                   <td className="px-6 py-3">{item}</td>

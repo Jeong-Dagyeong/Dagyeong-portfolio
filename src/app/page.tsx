@@ -10,9 +10,14 @@ export default function Home() {
         <div>
           <p className="text-2xl tracking-wide">
             안녕하세요. <br />
-            <span className="font-bold text-3xl text-yellow-400 color-change">긍정의 알고리즘으로 도전을 풀어가는</span>
+            <span className="font-bold text-3xl text-yellow-400 color-change">하면 된다. </span>
+            <span>라는 마인드를 가지고</span>
             <br />
-            정다경 입니다.
+            {/* <span className="font-bold text-3xl text-yellow-400 color-change">긍정의 알고리즘으로 도전을 풀어가는</span> */}
+            <span>긍정의 알고리즘으로 코드를 개발해 나가는</span>
+            <br />
+            <span className="font-bold text-3xl text-yellow-400 color-change">프론트엔드 개발자 </span>
+            <span>정다경 입니다.</span>
           </p>
           <Link
             href="https://github.com/Jeong-Dagyeong"
@@ -27,7 +32,7 @@ export default function Home() {
 
       {/* 교육 및 이력 */}
       <div className="mt-16">
-        <h2 className="text-yellow-400 text-3xl">교육 및 이력</h2>
+        <h2 className="text-yellow-400 text-3xl">Education</h2>
         <div className="grid grid-cols-2 gap-10 mt-6">
           {[
             { year: '2023', text: ['wecode 부트캠프 수료'] },
@@ -43,54 +48,53 @@ export default function Home() {
             <div
               key={item.year}
               className="w-full h-auto min-h-[180px] flex flex-col items-center justify-start border border-white rounded-xl px-6 
-              transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:bg-opacity-20 group"
+            "
             >
-              <span className="text-white text-xl font-bold group-hover:text-yellow-400 mt-4 mb-4">{item.year}</span>
+              <span className="text-white text-xl font-bold mt-4 mb-4 text-amber-300">{item.year}</span>
               <div className="mt-2 mb-8 space-y-2 text-white text-center">
                 {item.text.map((line, index) => (
-                  <p key={index} className="group-hover:text-yellow-300">
-                    {line}
-                  </p>
+                  <p key={index}>{line}</p>
                 ))}
               </div>
             </div>
           ))}
         </div>
       </div>
+
       {/* 기술 스택 */}
-      {/*
       <div className="mt-16">
-        <h2 className="text-yellow-400 text-3xl">기술 스택</h2>
-        <div className="flex justify-between mt-6 gap-10">
+        <h2 className="text-3xl text-yellow-400 mb-8">Skill & Tools</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { year: 'Language', text: ['HTML', 'CSS', 'Javascript', 'Typescript'] },
-            { year: 'Library & Framework', text: ['React', 'Next.js'] },
-            { year: 'Tools', text: ['GitHub', 'Figma', 'Slack', 'Notion', 'Trello'] },
+            { title: 'Language', text: ['HTML', 'CSS', 'Javascript', 'Typescript'] },
+            { title: 'Library & Framework', text: ['React', 'Next.js'] },
+            { title: 'Tools', text: ['GitHub', 'Figma', 'Slack', 'Notion', 'Trello'] },
           ].map((item) => (
             <div
-              key={item.year}
-              className="w-80 h-auto min-h-[180px] flex flex-col items-center justify-start border border-white rounded-xl px-6"
+              key={item.title}
+              className="flex flex-col items-center justify-start border border-white rounded-xl p-6 min-h-[180px]"
             >
-              <span className="mt-4 mb-4 text-white text-xl font-bol text-deep-gold">{item.year}</span>
+              <span className="text-amber-300 text-lg font-semibold mb-4">{item.title}</span>
 
-              <ul className="mt-2 mb-4 space-y-2 text-white text-center">
+              <ul className="space-y-2 text-white text-sm text-center">
                 {item.text.map((tech, index) => (
-                  <li key={index}>• {tech}</li>
+                  <li key={index}>{tech}</li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
       </div>
-      */}
+
       {/* 프로젝트 */}
       <div className="mt-16">
-        <h2 className="text-yellow-400 text-3xl">프로젝트</h2>
-        <div className="flex flex-col gap-4 mt-6">
+        <h2 className="text-yellow-400 text-3xl">Project</h2>
+        <div className="flex flex-col gap-4 mt-6 text-gray-300">
           {[
             {
               title: 'Recycle ChatBot',
-              description: '2024년 「미래내일 일경험사업」 우수사례 공모전 - 프로젝트 분야 본선진출한 개발물 입니다.',
+              description: '2024년 「미래내일 일경험사업」 우수사례 공모전 - 프로젝트 분야 본선진출 개발물입니다.',
               period: '2024.07 ~ 2024.09',
               team: '4명',
               details: [
@@ -103,7 +107,7 @@ export default function Home() {
             },
             {
               title: 'Green Seoul Bot',
-              description: 'ICT 이노베이션스퀘어 「피우다 프로젝트」 - 본선진출 개발물 입니다.',
+              description: 'ICT 이노베이션스퀘어 「피우다 프로젝트」 - 본선진출 개발물입니다.',
               period: '2024.10 ~ 2024.12',
               team: '3명',
               details: [
@@ -123,7 +127,7 @@ export default function Home() {
               details: [
                 '(주)MAZE에서 Acts29의 Master of Cafe 대회의 심사위원 채점 사이트에서 로그인 방식을 리팩토링하였습니다.',
                 '심사위원 채점을 토대로 참여자들의 점수를 원점수 및 다른 참가자들의 평균 점수와 비교하여 다양한 차트로 구현하였습니다.',
-                ,
+                '2주에 한번씩 협업 내용 보고와 성과 발표를 하였고 그에 대한 피드백을 받았습니다.',
               ],
               imgSrc: '/maze.png',
               link: '/maze',
@@ -155,10 +159,10 @@ export default function Home() {
 
               {/* 텍스트 컨텐츠 */}
               <div className="flex flex-col px-4 ml-6 flex-1">
-                <span className="text-3xl font-bold mb-1 text-yellow-400">{project.title}</span>
-                <span className="tracking-wide mb-2 text-xs">{project.description}</span>
-                <span className="text-[var(--color-accent)] mb-2">{project.period}</span>
-                <span className="text-[var(--color-accent)] mb-2">팀원 : {project.team}</span>
+                <span className="text-3xl font-bold mb-1 text-amber-300">{project.title}</span>
+                <span className="tracking-wide mb-2 text-xs text-gray-400">{project.description}</span>
+                <span className="text-[var(--color-accent)] mb-2 text-gray-400">{project.period}</span>
+                <span className="text-[var(--color-accent)] mb-2 text-gray-400">팀원 : {project.team}</span>
 
                 {project.details.map((text, i) => (
                   <span key={i} className="tracking-wide mb-4">
@@ -169,7 +173,7 @@ export default function Home() {
                 {/* 기술 스택 */}
                 <span className="flex gap-2">
                   {project.stack.map((item, i) => (
-                    <span key={i} className="px-2 py-1 bg-gray-700 text-white rounded">
+                    <span key={i} className="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">
                       {item}
                     </span>
                   ))}
@@ -178,7 +182,7 @@ export default function Home() {
                 {/* 상세보기 버튼 */}
                 <Link
                   href={project.link}
-                  className="border border-[var(--color-gold)] text-[var(--color-gold)] inline-flex items-center rounded-full px-3 py-1 size-fit mt-4"
+                  className="border border-[var(--color-gold)] text-[var(--color-gold)] inline-flex items-center rounded-full px-3 py-1 size-fit mt-4 text-sm"
                 >
                   상세보기
                 </Link>

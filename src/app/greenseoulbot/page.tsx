@@ -118,10 +118,10 @@ export default function GreenSeoulBot() {
           <table className="w-full text-left text-gray-300">
             <tbody>
               {[
-                '지역별로 상이한 재활용품 수거 품목과 기준, 보상품 정보를 안내',
-                '이미지 첨부 시 대형폐기물의 수수료 정보를 간편하게 제공',
                 '고대비 모드(다크모드), 음성인식 기능 등 접근성 강화 기술 적용',
                 '배리어프리 환경을 고려한 확대하기 모드 지원',
+                'DB와 연결하여 Recycle Chatbot보다 빠른 답변속도를 지원',
+                'Admin 페이지를 만들어 관리자의 정책정보 수정,추가,삭제가 용이',
               ].map((item, index) => (
                 <tr key={index} className="border-t border-gray-600">
                   <td className="px-6 py-3">{item}</td>
