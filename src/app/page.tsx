@@ -10,7 +10,7 @@ export default function Home() {
         <div>
           <p className="text-2xl tracking-wide">
             안녕하세요. <br />
-            <span className="font-bold text-3xl text-yellow-400 color-change">하면 된다. </span>
+            <span className="font-bold text-3xl text-yellow-400 color-change">‘하면 된다’</span>
             <span>라는 마인드를 가지고</span>
             <br />
             {/* <span className="font-bold text-3xl text-yellow-400 color-change">긍정의 알고리즘으로 도전을 풀어가는</span> */}
@@ -27,7 +27,7 @@ export default function Home() {
             <span>GitHub</span>
           </Link>
         </div>
-        {/* <img className="w-36 h-36 rounded-full" src="/profile.JPG" /> */}
+        <img className="w-56 h-44 rounded-full" src="/avatar.png" />
       </div>
 
       {/* 교육 및 이력 */}
@@ -133,20 +133,20 @@ export default function Home() {
               link: '/maze',
               stack: ['React', 'Apache ECharts', 'Lodash', 'Mantine UI', 'Axios'],
             },
-            // {
-            //   title: '멍멍냥냥 프로젝트',
+            {
+              title: '멍멍냥냥 프로젝트',
 
-            //   period: '2024.06.05 ~ 2023.06.28 (약 3주)',
-            //   team: '4명',
-            //   details: [
-            //     '멍멍냥냥은 반려동물 커뮤니티 웹 애플리케이션입니다.',
-            //     '사용자들은 반려동물 사진을 공유하고, 입양 및 임시보호 정보를 교환하며, 다양한 반려동물 관련 이슈에 대해 토론할 수 있습니다.',
-            //     ,
-            //   ],
-            //   imgSrc: '/bowwow_main.png',
-            //   link: '/dogncat',
-            //   stack: ['React', 'Javascript', 'Tailwind CSS', 'Axios'],
-            // },
+              period: '2024.06.05 ~ 2023.06.28 (약 3주)',
+              team: '4명',
+              details: [
+                '멍멍냥냥은 반려동물 커뮤니티 웹 애플리케이션입니다.',
+                '사용자들은 반려동물 사진을 공유하고, 입양 및 임시보호 정보를 교환하며, 다양한 반려동물 관련 이슈에 대해 토론할 수 있습니다.',
+                ,
+              ],
+              imgSrc: '/bowwow_main.png',
+              link: '/dogncat',
+              stack: ['React', 'Javascript', 'Tailwind CSS', 'Axios'],
+            },
           ].map((project, index) => (
             <div
               key={index}
