@@ -133,20 +133,20 @@ export default function Home() {
               link: '/maze',
               stack: ['React', 'Apache ECharts', 'Lodash', 'Mantine UI', 'Axios'],
             },
-            {
-              title: '멍멍냥냥 프로젝트',
+            // {
+            //   title: '멍멍냥냥 프로젝트',
 
-              period: '2024.06.05 ~ 2023.06.28 (약 3주)',
-              team: '4명',
-              details: [
-                '멍멍냥냥은 반려동물 커뮤니티 웹 애플리케이션입니다.',
-                '사용자들은 반려동물 사진을 공유하고, 입양 및 임시보호 정보를 교환하며, 다양한 반려동물 관련 이슈에 대해 토론할 수 있습니다.',
-                ,
-              ],
-              imgSrc: '/bowwow_main.png',
-              link: '/dogncat',
-              stack: ['React', 'Javascript', 'Tailwind CSS', 'Axios'],
-            },
+            //   period: '2024.06.05 ~ 2023.06.28 (약 3주)',
+            //   team: '4명',
+            //   details: [
+            //     '멍멍냥냥은 반려동물 커뮤니티 웹 애플리케이션입니다.',
+            //     '사용자들은 반려동물 사진을 공유하고, 입양 및 임시보호 정보를 교환하며, 다양한 반려동물 관련 이슈에 대해 토론할 수 있습니다.',
+            //     ,
+            //   ],
+            //   imgSrc: '/bowwow_main.png',
+            //   link: '/dogncat',
+            //   stack: ['React', 'Javascript', 'Tailwind CSS', 'Axios'],
+            // },
           ].map((project, index) => (
             <div
               key={index}
